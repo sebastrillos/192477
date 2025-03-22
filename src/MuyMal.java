@@ -2,37 +2,38 @@ import java.util.Scanner;
 
 public class MuyMal {
     public static void main(String[] args) throws Exception {
-        Scanner o = new Scanner(System.in);
+        Scanner input = new Scanner(System.in);
 
-        int i = 1;
-        int T = 0;
-        int M = 0;
-        int N = 0;
+        int numero = 1;
+        int sumaMultiplosDeTres = 0;
+        int sumaMultiplosDeCinco = 0;
+        int sumaNoMultiplos = 0;
 
-        System.out.println("Ingrese un número límite:");
-        int L = o.nextInt();
+        System.out.print("Ingrese un número límite:");
+        int numeroLimite = input.nextInt();
 
-        while (i <= L) {
-            if (i % 3 == 0) {
-                T = T + i;
-                System.out.println(i + " es múltiplo de 3");
+        while (numero <= numeroLimite) {
+            if (numero % 3 == 0) {
+                sumaMultiplosDeTres = sumaMultiplosDeTres + numero;
+                System.out.println(numero + " es múltiplo de 3");
             }
 
-            if (i % 5 == 0) {
-                M = M + i;
-                System.out.println(i + " es múltiplo de 5");
+            if (numero % 5 == 0) {
+                sumaMultiplosDeCinco = sumaMultiplosDeCinco + numero;
+                System.out.println(numero + " es múltiplo de 5");
             }
 
-            if (i % 3 != 0 && i % 5 != 0) {
-                N = N + i;
-                System.out.println(i + " no es múltiplo de 3 ni 5");
+            if (numero % 3 != 0 && numero % 5 != 0) {
+                sumaNoMultiplos = sumaNoMultiplos + numero;
+                System.out.println(numero + " no es múltiplo de 3 ni 5");
             }
 
-            i = i + 1;
+            numero++;
+            input.close();
         }
 
-        System.out.println("Suma de múltiplos de 3: " + T);
-        System.out.println("Suma de múltiplos de 5: " + M);
-        System.out.println("Suma del resto: " + N);
+        System.out.println("Suma de múltiplos de 3: " + sumaMultiplosDeTres);
+        System.out.println("Suma de múltiplos de 5: " + sumaMultiplosDeCinco);
+        System.out.println("Suma del resto: " + sumaNoMultiplos);
     }
 }
